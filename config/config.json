@@ -1,15 +1,20 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "password",
     "database": "measurements_db",
+=======
+    "password": null,
+    "database": "fitnessDB",
+>>>>>>> models
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "testdb",
+    "database": "fitnessDB",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
