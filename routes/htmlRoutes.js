@@ -1,4 +1,5 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
   // Load index page
@@ -6,8 +7,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 
+  //loads newEntry page
   app.get("/newEntry", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/newEntry.html"));
+  });
+
+  //this is here for test, it does not currently pull DB info
+  app.get("/view", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/view.html"));
   });
 
   // Load example page and pass in an example by id
