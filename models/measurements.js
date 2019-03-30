@@ -62,7 +62,6 @@ module.exports = function (sequelize, DataType) {
       timestamps: true,
       createdAt: true
     });
-
->>>>>>> models
+  
   return Measurements;
 };
