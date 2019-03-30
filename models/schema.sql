@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS fitnessDB;
-
-CREATE DATABASE fitnessDB;
-
-USE fitnessDB;

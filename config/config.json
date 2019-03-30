@@ -1,13 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password",
     "database": "measurements_db",
-=======
-    "password": null,
-    "database": "fitnessDB",
->>>>>>> models
     "host": "localhost",
     "dialect": "mysql"
   },
