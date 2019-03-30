@@ -1,74 +1,68 @@
 
 module.exports = function (sequelize, DataType) {
-  var Fitness = sequelize.define("measurements", {
+  var Measurements = sequelize.define("Measurements ", {
     id: {
       autoIncrement: true,
       type: DataType.INTEGER,
       primaryKey: true
     },
+    name: {
+      type: DataType.STRING,
+      allowNull: false,
+    },
     weight: {
-      type: DataType.INTEGER,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
     },
     chest: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     waist: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     beltLine: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     leftBicept: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     rightBicep: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     leftForearm: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     rightForearm: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     leftThigh: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     rightThigh: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     leftCalf: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
     },
     rightCalf: {
-      type: DataType.BOOLEAN,
+      type: DataType.DECIMAL(10, 2),
       allowNull: false,
-      defaultValue: false,
+
     },
   }, {
       timestamps: true,
       createdAt: true
     });
 
-  return Fitness;
+  return Measurements;
 };
