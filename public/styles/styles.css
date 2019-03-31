@@ -2,3 +2,15 @@
   line-height: 2.5;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+#home {
+  background: url(gym.jpg) no-repeat 50%,50%;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
