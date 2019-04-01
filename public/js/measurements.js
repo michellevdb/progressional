@@ -16,9 +16,50 @@ $(document).ready(function() {
     //submit button event handler
     $(document).on("click", "button.submitButton", sendMeasurementData);
 
-    //submit button logic
+    //submit button function logic
     function sendMeasurementData(event) {
+
         event.preventDefault();
         console.log("Goliath online.");
-    }
+
+        if (!$weight || !$chest || !$waist || !$beltLine || !$leftBicep || !$rightBicep || !$leftForearm || !$rightForearm || !$leftThigh || !$rightThigh || !$leftCalf || !$rightCalf) {
+            console.log("Uh oh. Empty form inputs.");
+            return;
+        }
+
+        else {
+
+            console.log("Form info complete");
+
+            var newMeasurement = {
+                name: TESTDATA, //add how to grab this name
+                weight: $weight,
+                chest: $chest,
+                waist: $waist,
+                beltLine: $beltLine,
+                leftBicep: $leftBicep,
+                rightBicep: $rightBicep,
+                leftForearm: $leftForearm,
+                rightForearm: $rightForearm,
+                leftThigh: $leftThigh,
+                rightThigh: $rightThigh,
+                leftCalf: $leftCalf,
+                rightCalf: $rightCalf
+            };
+
+            submitMeasurement(newMeasurement);
+        }
+    };
+
+    //function to send data to database
+    function submitMeasurement(Measurement) {
+
+        $.post("api/measurements/", Measurement, function() {
+
+            //add href link to the next user page. Ask Carmen/Dami
+            window.location.href = "/"
+        });
+
+    };
+
 });
