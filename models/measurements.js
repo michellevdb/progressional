@@ -59,8 +59,18 @@ module.exports = function (sequelize, DataType) {
       allowNull: false,
 
     },
+    createdAt: {
+      allowNull: false,
+      defaultValue: new Date(),
+      type: DataType.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      defaultValue: new Date(),
+      type: DataType.DATE,
+    }
 
-    });
+  });
 
   return Measurements;
 };

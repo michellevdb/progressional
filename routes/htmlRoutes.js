@@ -18,8 +18,8 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/measurements/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/measurements/:name", function(req, res) {
+    db.Measurements.findAll({ where: { name: req.params.name } }).then(function(dbMeasurements) {
       res.sendFile(path.join(__dirname, "../public/view.html"));
     });
   });

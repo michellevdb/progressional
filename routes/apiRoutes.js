@@ -1,24 +1,24 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all measurements
   app.get("/api/measurements", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    db.Measurements.findAll({}).then(function(dbMeasurements) {
+      res.json(dbMeasurements);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new measurement
+  app.post("/api/measurements", function(req, res) {
+    db.Measurements.create(req.body).then(function(dbMeasurements) {
+      res.json(dbMeasurements);
     });
   });
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbMeasurements) {
+      res.json(dbMeasurements);
     });
   });
 };
