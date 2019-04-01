@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataType) {
+
   var Measurements = sequelize.define("Measurements", {
     id: {
       autoIncrement: true,
@@ -25,7 +26,7 @@ module.exports = function (sequelize, DataType) {
       type: DataType.DECIMAL(10, 2),
       allowNull: false,
     },
-    leftBicept: {
+    leftBicep: {
       type: DataType.DECIMAL(10, 2),
       allowNull: false,
     },
@@ -58,10 +59,8 @@ module.exports = function (sequelize, DataType) {
       allowNull: false,
 
     },
-  }, {
-      timestamps: true,
-      createdAt: true
+
     });
-  
+
   return Measurements;
 };
