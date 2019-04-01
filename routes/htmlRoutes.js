@@ -24,8 +24,8 @@ module.exports = function(app) {
     });
   });
 
-  // Render 404 page for any unmatched routes
+  // unmatched routed direct you to home page
   app.get("*", function(req, res) {
-    res.render("404");
+    res.sendFile(path.join(__dirname, "../public/welcome.html"));
   });
 };
