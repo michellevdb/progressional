@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
     //var $userName =  $("#userName").val().trim();
-    var $weight = $("#weight").val().trim();
-    var $chest = $("#chest").val().trim();
-    var $waist = $("#waist").val().trim();
-    var $beltLine = $("#beltLine").val().trim();
-    var $leftBicep = $("#leftBicep").val().trim();
-    var $rightBicep = $("#rightBicep").val().trim();
-    var $leftForearm = $("#leftForearm").val().trim();
-    var $rightForearm = $("#rightForearm").val().trim();
-    var $leftThigh = $("#leftThigh").val().trim();
-    var $rightThigh = $("#rightThigh").val().trim();
-    var $leftCalf = $("#leftCalf").val().trim();
-    var $rightCalf = $("#rightCalf").val().trim();
+    var $weight = $("#weight");
+    var $chest = $("#chest");
+    var $waist = $("#waist");
+    var $beltLine = $("#beltLine");
+    var $leftBicep = $("#leftBicep");
+    var $rightBicep = $("#rightBicep");
+    var $leftForearm = $("#leftForearm");
+    var $rightForearm = $("#rightForearm");
+    var $leftThigh = $("#leftThigh");
+    var $rightThigh = $("#rightThigh");
+    var $leftCalf = $("#leftCalf");
+    var $rightCalf = $("#rightCalf");
 
     //submit button event handler
     $(document).on("click", "button.submitButton", sendMeasurementData);
@@ -23,7 +23,7 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("Submit Measurement button pressed.");
 
-        if (!$weight || !$chest || !$waist || !$beltLine || !$leftBicep || !$rightBicep || !$leftForearm || !$rightForearm || !$leftThigh || !$rightThigh || !$leftCalf || !$rightCalf) {
+        if (!$weight.val() || !$chest.val() || !$waist.val() || !$beltLine.val() || !$leftBicep.val() || !$rightBicep.val() || !$leftForearm.val() || !$rightForearm.val() || !$leftThigh.val() || !$rightThigh.val() || !$leftCalf.val() || !$rightCalf.val()) {
             console.log("Uh oh. Empty form inputs.");
             return;
         }
@@ -33,19 +33,18 @@ $(document).ready(function() {
             console.log("Form info complete");
 
             var newMeasurement = {
-                name: TESTDATA, //add how to grab this name
-                weight: $weight,
-                chest: $chest,
-                waist: $waist,
-                beltLine: $beltLine,
-                leftBicep: $leftBicep,
-                rightBicep: $rightBicep,
-                leftForearm: $leftForearm,
-                rightForearm: $rightForearm,
-                leftThigh: $leftThigh,
-                rightThigh: $rightThigh,
-                leftCalf: $leftCalf,
-                rightCalf: $rightCalf
+                weight: $weight.val().trim(),
+                chest: $chest.val().trim(),
+                waist: $waist.val().trim(),
+                beltLine: $beltLine.val().trim(),
+                leftBicep: $leftBicep.val().trim(),
+                rightBicep: $rightBicep.val().trim(),
+                leftForearm: $leftForearm.val().trim(),
+                rightForearm: $rightForearm.val().trim(),
+                leftThigh: $leftThigh.val().trim(),
+                rightThigh: $rightThigh.val().trim(),
+                leftCalf: $leftCalf.val().trim(),
+                rightCalf: $rightCalf.val().trim()
             };
 
             submitMeasurement(newMeasurement);
@@ -57,8 +56,8 @@ $(document).ready(function() {
 
         $.post("api/measurements/", Measurement, function() {
 
-            //add href link to the next user page. Ask Carmen/Dami
-            window.location.href = "/user_stat"
+            //add href link to the next user page.
+            window.location.href = "../user_stat.html"
         });
 
     };
