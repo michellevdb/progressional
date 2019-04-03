@@ -6,10 +6,6 @@ module.exports = function (sequelize, DataType) {
       type: DataType.INTEGER,
       primaryKey: true
     },
-    name: {
-      type: DataType.STRING,
-      allowNull: false,
-    },
     weight: {
       type: DataType.DECIMAL(10, 2),
       allowNull: false,
@@ -71,6 +67,14 @@ module.exports = function (sequelize, DataType) {
     }
 
   });
+
+  Measurements.associate = function(models) {
+    Measurements.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Measurements;
 };

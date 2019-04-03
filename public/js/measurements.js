@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    var $userName =  $("#userName").val().trim();
     var $weight = $("#weight").val().trim();
     var $chest = $("#chest").val().trim();
     var $waist = $("#waist").val().trim();
