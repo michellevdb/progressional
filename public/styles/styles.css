@@ -9,7 +9,7 @@ html, body {
 
 }
 #home {
-  background: url(gym.jpg) no-repeat 50%,50%;
+  background: url(weights.jpg) no-repeat 50%,50%;
   display: table;
   height: 100%;
   width: 100%;
@@ -20,6 +20,15 @@ html, body {
 #welcome-h1 {
   margin-top: 15%;
   text-align: center;
-  color: whitesmoke;
-  font-family: 'Press+Start+2P', sans-serif;
+  color: white;
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 400%;
+  text-size-adjust: auto;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 26%, rgba(137,139,140,1) 69%, rgba(254,254,254,1) 100%);
+  border: 10%;
+}
+
+.welcome-card {
+  text-align: center;
 }
