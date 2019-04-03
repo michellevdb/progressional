@@ -8,6 +8,23 @@ module.exports = function(app) {
     });
   });
 
+  //Get all Users
+  app.get("/api/users", function(req, res) {
+
+    db.User.findAll({
+      include: [db.Measurements]
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  //create a User, post request
+  app.post("/api/users", function(req, res) {
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
   // Create a new measurement
   app.post("/api/measurements", function(req, res) {
     db.Measurements.create(req.body).then(function(dbMeasurements) {
@@ -15,10 +32,5 @@ module.exports = function(app) {
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbMeasurements) {
-      res.json(dbMeasurements);
-    });
-  });
+//closes modules exports
 };

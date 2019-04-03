@@ -14,6 +14,17 @@ $(document).ready(function() {
     var $leftCalf = $("#leftCalf");
     var $rightCalf = $("#rightCalf");
 
+    //grabs value from user select menu
+    $(".dropdown-menu a").click( function(event) {
+        event.preventDefault();
+        var selectedUser = $(this).text();
+        //assigns button text to name of selected user
+        $(".dropdown-toggle").text(selectedUser);
+        //creates an attritube in html element to later be grabbed for ajax post
+        $(".dropdown-toggle").attr("data-name", selectedUser);
+        console.log("User selected: " + selectedUser);
+    });
+
     //submit button event handler
     $(document).on("click", "button.submitButton", sendMeasurementData);
 
@@ -45,7 +56,7 @@ $(document).ready(function() {
                 rightThigh: $rightThigh.val().trim(),
                 leftCalf: $leftCalf.val().trim(),
                 rightCalf: $rightCalf.val().trim(),
-                UserID: userSelect.val()
+                UserId: $(".dropdown-toggle").attr("data-name")
             };
 
             submitMeasurement(newMeasurement);
