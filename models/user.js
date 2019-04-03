@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataType) {
     var User = sequelize.define("User", {
 
         name: {
-           type:  DataTypes.String,
+           type:  DataType.STRING,
            allowNull: false,
         },
   
