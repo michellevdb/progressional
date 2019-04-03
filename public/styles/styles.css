@@ -5,6 +5,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  font-family: 'quicksand', sans-serif;
 
 }
 #home {
@@ -13,4 +14,12 @@ html, body {
   height: 100%;
   width: 100%;
   background-size: cover;
+
+}
+
+#welcome-h1 {
+  margin-top: 15%;
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Press+Start+2P', sans-serif;
 }
