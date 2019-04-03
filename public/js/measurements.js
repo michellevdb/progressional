@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var $userName =  $("#userName").val().trim();
+    //var $userName =  $("#userName").val().trim();
     var $weight = $("#weight").val().trim();
     var $chest = $("#chest").val().trim();
     var $waist = $("#waist").val().trim();
@@ -21,7 +21,7 @@ $(document).ready(function() {
     function sendMeasurementData(event) {
 
         event.preventDefault();
-        console.log("Goliath online.");
+        console.log("Submit Measurement button pressed.");
 
         if (!$weight || !$chest || !$waist || !$beltLine || !$leftBicep || !$rightBicep || !$leftForearm || !$rightForearm || !$leftThigh || !$rightThigh || !$leftCalf || !$rightCalf) {
             console.log("Uh oh. Empty form inputs.");
@@ -58,7 +58,7 @@ $(document).ready(function() {
         $.post("api/measurements/", Measurement, function() {
 
             //add href link to the next user page. Ask Carmen/Dami
-            window.location.href = "/"
+            window.location.href = "/user_stat"
         });
 
     };
