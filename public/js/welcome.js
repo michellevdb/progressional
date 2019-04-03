@@ -20,7 +20,11 @@ $(document).ready(function() {
     };
 
     function upsertUser(userData) {
-        $.post("/api/users")
-            .then(console.log("user posted to server"));
+        $.post("/api/users", userData, function() {
+
+            console.log("user posted to server");
+            window.location.href = "/user_stat.html";
+            
+        });
     }
 });
