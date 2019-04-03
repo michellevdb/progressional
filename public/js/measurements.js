@@ -44,7 +44,8 @@ $(document).ready(function() {
                 leftThigh: $leftThigh.val().trim(),
                 rightThigh: $rightThigh.val().trim(),
                 leftCalf: $leftCalf.val().trim(),
-                rightCalf: $rightCalf.val().trim()
+                rightCalf: $rightCalf.val().trim(),
+                UserID: userSelect.val()
             };
 
             submitMeasurement(newMeasurement);
@@ -57,7 +58,7 @@ $(document).ready(function() {
         $.post("api/measurements/", Measurement, function() {
 
             //add href link to the next user page.
-            window.location.href = "../user_stat.html"
+            window.location.href = "/user_stat.html"
         });
 
     };
