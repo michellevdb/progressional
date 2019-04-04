@@ -13,15 +13,41 @@ $(document).ready(function() {
     var $rightThigh = $("#rightThigh");
     var $leftCalf = $("#leftCalf");
     var $rightCalf = $("#rightCalf");
+    
+    //grabs users from database in prep for list creation
+    $.get("/api/users", function(data) {
+        console.log(data);
+
+        if (data.length !==0) {
+
+            for (var i=0; i<data.length; i++) {
+                var row = $("<a>");
+                row.addClass("dropdown-item");
+                row.attr("href", "#");
+                row.attr("data-name", data[i].name);
+                row.attr("data-id", data[i].id);
+                row.text(data[i].name);
+
+                $(".dropdown-menu").append(row);
+            }
+        }
+    });
 
     //grabs value from user select menu
-    $(".dropdown-menu a").click( function(event) {
+    $(".dropdown-menu").on("click", "a", function(event) {
+
         event.preventDefault();
+
         var selectedUser = $(this).text();
+        var selectedUserID = $(this).attr("data-id");
+
         //assigns button text to name of selected user
         $(".dropdown-toggle").text(selectedUser);
-        //creates an attritube in html element to later be grabbed for ajax post
+        
+        //creates attritubes in html element to later be grabbed for ajax post
         $(".dropdown-toggle").attr("data-name", selectedUser);
+        $(".dropdown-toggle").attr("data-id", selectedUserID);
+
         console.log("User selected: " + selectedUser);
     });
 
@@ -56,7 +82,7 @@ $(document).ready(function() {
                 rightThigh: $rightThigh.val().trim(),
                 leftCalf: $leftCalf.val().trim(),
                 rightCalf: $rightCalf.val().trim(),
-                UserId: $(".dropdown-toggle").attr("data-name")
+                UserId: $(".dropdown-toggle").attr("data-id")
             };
 
             submitMeasurement(newMeasurement);
@@ -64,9 +90,9 @@ $(document).ready(function() {
     };
 
     //function to send data to database
-    function submitMeasurement(Measurement) {
+    function submitMeasurement(measurement) {
 
-        $.post("api/measurements/", Measurement, function() {
+        $.post("api/measurements/", measurement, function() {
 
             //add href link to the next user page.
             window.location.href = "/user_stat.html"

@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all measurements
+  // Get all Measurements
   app.get("/api/measurements", function(req, res) {
     db.Measurements.findAll({}).then(function(dbMeasurements) {
       res.json(dbMeasurements);
@@ -18,14 +18,14 @@ module.exports = function(app) {
     });
   });
 
-  //create a User, post request
+  //Create a new User
   app.post("/api/users", function(req, res) {
     db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
-  // Create a new measurement
+  //Create a new Measurement
   app.post("/api/measurements", function(req, res) {
     db.Measurements.create(req.body).then(function(dbMeasurements) {
       res.json(dbMeasurements);
