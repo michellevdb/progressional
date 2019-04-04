@@ -23,7 +23,7 @@ $(document).ready(function() {
         $.post("/api/users", userData, function() {
 
             console.log("user posted to server");
-            window.location.href = "/user_stat.html";
+            window.location.href = "/user.html";
             
         });
     }
