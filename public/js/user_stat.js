@@ -7,13 +7,13 @@ $.ajax({
     console.log(jsonData);
 
     for (var i = 0; i < jsonData.length; i++) {
-      console.log(jsonData[i].updatedAt.slice(5,10))
+      console.log(jsonData[i+=1].id);
 
       var aChart = $("#lineChart");
       var lineChart = new Chart(aChart, {
         type: 'line',
         data: {
-          labels: [jsonData[i].updatedAt.slice(5,10), jsonData[i+1].updatedAt.slice(5,10), "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          labels: [jsonData[i].updatedAt.slice(5,10), jsonData[i].updatedAt.slice(5,10), "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
           datasets: [{
             data: [jsonData[i].weight],
             label: "Weight",
