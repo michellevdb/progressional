@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    <script src="main.js"></script>
+
     <link re="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Nanum+Gothic|Quicksand" rel="stylesheet">
 </head>
@@ -23,7 +23,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="welcome.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="welcome.html">Home <span
+                            class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="user.html">Add Stats</a>
                     <a class="nav-item nav-link" href="user_stat.html">View Stats</a>
                 </div>
@@ -37,44 +38,46 @@
             </p>
         </div>
 
+        <canvas id="lineChart" height="400" width="400"></canvas>
 
         <button type="button" class="btn btn-primary mr-1 mt-3">Weight</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Chest</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Waist</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Belt Line</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Left Bicep</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Right Bicep</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Left Forearm</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Right Forearm</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Left Thigh</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Right Thigh</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Left Calf</button>
-        
+
         <button type="button" class="btn btn-primary mr-1 mt-3">Right Calf</button>
 
     </div>
 
 
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="js/user_stat.js"></script>
+
 </body>
 
 </html>
