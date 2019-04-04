@@ -1,24 +1,36 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all Measurements
   app.get("/api/measurements", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    db.Measurements.findAll({}).then(function(dbMeasurements) {
+      res.json(dbMeasurements);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  //Get all Users
+  app.get("/api/users", function(req, res) {
+
+    db.User.findAll({
+      include: [db.Measurements]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  //Create a new User
+  app.post("/api/users", function(req, res) {
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
+
+  //Create a new Measurement
+  app.post("/api/measurements", function(req, res) {
+    db.Measurements.create(req.body).then(function(dbMeasurements) {
+      res.json(dbMeasurements);
+    });
+  });
+
+//closes modules exports
 };

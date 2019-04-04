@@ -1,13 +1,10 @@
 module.exports = function (sequelize, DataType) {
+
   var Measurements = sequelize.define("Measurements", {
     id: {
       autoIncrement: true,
       type: DataType.INTEGER,
       primaryKey: true
-    },
-    name: {
-      type: DataType.STRING,
-      allowNull: false,
     },
     weight: {
       type: DataType.DECIMAL(10, 2),
@@ -25,7 +22,7 @@ module.exports = function (sequelize, DataType) {
       type: DataType.DECIMAL(10, 2),
       allowNull: false,
     },
-    leftBicept: {
+    leftBicep: {
       type: DataType.DECIMAL(10, 2),
       allowNull: false,
     },
@@ -58,10 +55,26 @@ module.exports = function (sequelize, DataType) {
       allowNull: false,
 
     },
-  }, {
-      timestamps: true,
-      createdAt: true
+    createdAt: {
+      allowNull: false,
+      defaultValue: new Date(),
+      type: DataType.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      defaultValue: new Date(),
+      type: DataType.DATE,
+    }
+
+  });
+
+  Measurements.associate = function(models) {
+    Measurements.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-  
+  };
+
   return Measurements;
 };
