@@ -35,11 +35,15 @@ $(document).ready(function() {
 
     //grabs value from user select menu
     $(".dropdown-menu").on("click", "a", function(event) {
+
         event.preventDefault();
+
         var selectedUser = $(this).text();
         var selectedUserID = $(this).attr("data-id");
+
         //assigns button text to name of selected user
         $(".dropdown-toggle").text(selectedUser);
+        
         //creates attritubes in html element to later be grabbed for ajax post
         $(".dropdown-toggle").attr("data-name", selectedUser);
         $(".dropdown-toggle").attr("data-id", selectedUserID);
