@@ -77,7 +77,7 @@ $(document).ready(function () {
               fill: false
             }],
           },
-          
+
           options: {
             responsive: true,
             title: {
@@ -87,7 +87,7 @@ $(document).ready(function () {
             scales: {
               yAxes: [{
                 ticks: {
-                //beginAtZero: true,
+                  beginAtZero: true,
                   suggestedMax: 40,
                   suggestedMin: 10
                 }
