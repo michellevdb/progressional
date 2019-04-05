@@ -52,7 +52,7 @@ h2 {
   
  
 }
-
-
-/* #user-join-submit = submit button on main page where user submits name */
-/* #submit-measurements = submit button on measurements page */
+h1 {
+  animation-duration: 5s;
+  animation-delay: 0.3s;
+}
