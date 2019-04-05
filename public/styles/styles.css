@@ -41,5 +41,9 @@ h1  {
   /* animation-iteration-count: infinite; */
 }
 
+.query-button {
+  text-align: center;
+}
+
 /* #user-join-submit = submit button on main page where user submits name */
 /* #submit-measurements = submit button on measurements page */
