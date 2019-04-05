@@ -34,5 +34,12 @@ html, body {
   
 }
 
+h1  {
+  animation-duration: 5s;
+  animation-delay: 0.3s;
+
+  /* animation-iteration-count: infinite; */
+}
+
 /* #user-join-submit = submit button on main page where user submits name */
-/* #submit-measurements */
+/* #submit-measurements = submit button on measurements page */
