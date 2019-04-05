@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link re="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Nanum+Gothic|Quicksand" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container animated slideInUp" id="stats-page">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent border-0">
             <a class="navbar-brand" href="welcome.html">M-BODY</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +23,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="welcome.html">Home <span
-                            class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="user.html">Add Stats</a>
+                    <!-- <a class="nav-item nav-link active" href="welcome.html">Home <span
+                            class="sr-only">(current)</span></a> -->
+                    <a class="nav-item nav-link" href="measurements.html">Add Stats</a>
                     <a class="nav-item nav-link" href="user_stat.html">View Stats</a>
 
                     <!-- User Dropdown -->
@@ -51,7 +51,7 @@
 
 
 
-        <div class="jumbotron">
+        <div class="jumbotron bg-transparent border-0">
             <h1 class="display-4">STATS</h1>
             <p class="lead">
                 GRAPH
@@ -71,13 +71,21 @@
 
         <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 beltButton query-button" data-measurement="beltLine">Belt Line</button>
 
-        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 bicepsButton query-button" data-measurement="leftBicep + rightBicep">Biceps</button>
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 bicepsButton query-button" data-measurement="leftBicep">Left Bicep</button>
 
-        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 forearmsButton query-button" data-measurement="leftForearm + rightForearm">Forearms</button>
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 bicepsButton query-button" data-measurement="rightBicep">Right Bicep</button>
 
-        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 thighsButton query-button" data-measurement="leftThigh + rightThigh">Thighs</button>
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 forearmsButton query-button" data-measurement="leftForearm">Left Forearm</button>
 
-        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 calvesButton query-button" data-measurement="leftCalf + rightCalf">Calves</button>
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 forearmsButton query-button" data-measurement="rightForearm">Right Forearm</button>
+
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 thighsButton query-button" data-measurement="leftThigh">Left Thigh</button>
+
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 thighsButton query-button" data-measurement="rightThigh">Right Thigh</button>
+
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 calvesButton query-button" data-measurement="leftCalf">Left Calf</button>
+
+        <button type="button" class="btn btn-dark mr-1 mt-3 mb-5 calvesButton query-button" data-measurement="rightCalf">Right Calf</button>
     </div>
 </div>
 

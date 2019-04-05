@@ -8,6 +8,8 @@ html, body {
   font-family: 'quicksand', sans-serif;
 
 }
+  
+
 #home {
   background: url(ropes.jpg) no-repeat 50%,50%;
   display: table;
@@ -22,29 +24,35 @@ html, body {
   margin-top: 15%;
   text-align: center;
   color: white;
-  font-family: 'Permanent Marker', sans-serif;
-  font-size: 400%;
+  font-family: 'Londrina Outline', cursive;
+  font-size: 650%;
   text-size-adjust: auto;
+  animation-duration: 5s;
+  animation-delay: 0.3s;
   
+}
+
+h2 {
+  text-align: center;
+  font-family:'quicksand';
+  color:white;
+  animation-duration: 6s;
+  animation-delay: 2s;
 }
 
 .welcome-card {
   text-align: center;
   color: white;
-  
-}
-
-h1  {
-  animation-duration: 5s;
-  animation-delay: 0.3s;
-
-  /* animation-iteration-count: infinite; */
+  animation-duration: 6s;
+  animation-delay: 3s;
 }
 
 .query-button {
   text-align: center;
+  
  
 }
+
 
 /* #user-join-submit = submit button on main page where user submits name */
 /* #submit-measurements = submit button on measurements page */
