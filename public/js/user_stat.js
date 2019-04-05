@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  var selectedUser = $(".dropdown-menu").attr("data-id");
+
   //grabs users from database in prep for list creation
   $.get("/api/users", function (data) {
     console.log(data);
@@ -35,6 +37,18 @@ $(document).ready(function () {
       $(".dropdown-toggle").attr("data-id", selectedUserID);
 
       console.log("User selected: " + selectedUser);
+  });
+
+  //grabs value of button clicked, hopefully generates a graph
+  $(".query-button").on("click", function() {
+
+    var buttonValue = $(this).attr("data-measurement");
+    var selectedUser = $(".dropdown-toggle").attr("data-id");
+
+    console.log("measurement selector clicked, button clicked: " + buttonValue);
+    console.log("selected user is: " + selectedUser);
+
+ 
   });
 
 
