@@ -43,12 +43,35 @@ $(document).ready(function () {
   $(".query-button").on("click", function() {
 
     var buttonValue = $(this).attr("data-measurement");
+    var selectedValue = buttonValue.toString();
     var selectedUser = $(".dropdown-toggle").attr("data-id");
 
     console.log("measurement selector clicked, button clicked: " + buttonValue);
     console.log("selected user is: " + selectedUser);
 
- 
+    $.get("/api/users/" + selectedUser)
+      .then(function(data) {
+      
+        var theData = data.Measurements;
+        var labels = [];
+        var data = [];
+
+        console.log(buttonValue);
+
+          for (i=0; i < theData.length; i++) {
+
+            console.log(theData[i][selectedValue]);
+            data.push(theData[i][selectedValue]);
+
+            console.log(theData[i].createdAt.slice(5, 10));
+            labels.push(theData[i].createdAt.slice(5, 10));
+
+            console.log(labels);
+            console.log(data);
+
+          };
+        
+      });
   });
 
 
