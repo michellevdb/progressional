@@ -22,7 +22,7 @@ html, body {
   margin-top: 15%;
   text-align: center;
   color: white;
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: 'Monoton', sans-serif;
   font-size: 400%;
   text-size-adjust: auto;
   
@@ -34,7 +34,7 @@ html, body {
   
 }
 
-h1  {
+.h1  {
   animation-duration: 5s;
   animation-delay: 0.3s;
 
