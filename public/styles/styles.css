@@ -6,10 +6,10 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'quicksand', sans-serif;
-  animation-duration: 5s;
-  animation-delay: 0.3s;
 
 }
+  
+
 #home {
   background: url(ropes.jpg) no-repeat 50%,50%;
   display: table;
@@ -32,11 +32,19 @@ html, body {
   
 }
 
+h2 {
+  text-align: center;
+  font-family:'quicksand';
+  color:white;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
 .welcome-card {
   text-align: center;
   color: white;
   animation-duration: 6s;
-  animation-delay: 0.3s;
+  animation-delay: 3s;
 }
 
 .query-button {
@@ -45,9 +53,6 @@ html, body {
  
 }
 
-#measurements-main {
-  color: white;
-}
 
 /* #user-join-submit = submit button on main page where user submits name */
 /* #submit-measurements = submit button on measurements page */
