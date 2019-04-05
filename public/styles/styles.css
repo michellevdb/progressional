@@ -33,3 +33,17 @@ html, body {
   color: white;
   
 }
+
+h1  {
+  animation-duration: 5s;
+  animation-delay: 0.3s;
+
+  /* animation-iteration-count: infinite; */
+}
+
+.query-button {
+  text-align: center;
+}
+
+/* #user-join-submit = submit button on main page where user submits name */
+/* #submit-measurements = submit button on measurements page */
