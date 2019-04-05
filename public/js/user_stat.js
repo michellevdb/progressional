@@ -88,8 +88,9 @@ $(document).ready(function () {
               yAxes: [{
                 ticks: {
                   beginAtZero: true,
-                  suggestedMax: 40,
-                  suggestedMin: 10
+                  suggestedMax: 30,
+                  suggestedMin: 10,
+                  //maxTicksLimit: 8,
                 }
               }]
             }
