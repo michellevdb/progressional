@@ -95,7 +95,7 @@ $(document).ready(function() {
         $.post("api/measurements/", measurement, function() {
 
             //add href link to the next user page.
-            window.location.href = "/measurements.html"
+            window.location.href = "/user_stat.html"
         });
 
     };
