@@ -27,9 +27,31 @@
                             class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="user.html">Add Stats</a>
                     <a class="nav-item nav-link" href="user_stat.html">View Stats</a>
+
+                    <!-- User Dropdown -->
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+
+
+                    </div>
                 </div>
-            </div>
         </nav>
+
+
+
+
+
+
+
 
         <div class="jumbotron">
             <h1 class="display-4">STATS</h1>
@@ -37,32 +59,29 @@
                 GRAPH
             </p>
         </div>
+        <div class="row">
 
-        <canvas id="lineChart" height="400" width="400"></canvas>
+            <canvas class="col-sm-12" id="lineChart" height="400" width="400"> </canvas>
+        </div>
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <button type="button" class="btn btn-primary mr-1 mt-3  mb-5 weightButton">Weight</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Weight</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 chestButton">Chest</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Chest</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 waistButton">Waist</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Waist</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 beltButton">Belt Line</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Belt Line</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 bicepsButton">Biceps</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Left Bicep</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 forearmsButton">Forearms</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Right Bicep</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 thighsButton">Thighs</button>
 
-        <button type="button" class="btn btn-primary mr-1 mt-3">Left Forearm</button>
-
-        <button type="button" class="btn btn-primary mr-1 mt-3">Right Forearm</button>
-
-        <button type="button" class="btn btn-primary mr-1 mt-3">Left Thigh</button>
-
-        <button type="button" class="btn btn-primary mr-1 mt-3">Right Thigh</button>
-
-        <button type="button" class="btn btn-primary mr-1 mt-3">Left Calf</button>
-
-        <button type="button" class="btn btn-primary mr-1 mt-3">Right Calf</button>
+        <button type="button" class="btn btn-primary mr-1 mt-3 mb-5 calvesButton">Calves</button>
+    </div>
+</div>
 
     </div>
 
@@ -75,8 +94,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script src="js/user_stat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/user_stat.js"></script>
 
 </body>
 
