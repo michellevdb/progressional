@@ -6,6 +6,8 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'quicksand', sans-serif;
+  animation-duration: 5s;
+  animation-delay: 0.3s;
 
 }
 #home {
@@ -23,7 +25,7 @@ html, body {
   text-align: center;
   color: white;
   font-family: 'Londrina Outline', cursive;
-  font-size: 600%;
+  font-size: 650%;
   text-size-adjust: auto;
   animation-duration: 5s;
   animation-delay: 0.3s;
@@ -33,11 +35,13 @@ html, body {
 .welcome-card {
   text-align: center;
   color: white;
-  
+  animation-duration: 6s;
+  animation-delay: 0.3s;
 }
 
 .query-button {
   text-align: center;
+  
  
 }
 
