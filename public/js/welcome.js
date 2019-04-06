@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log("welcome.js loaded");
 
     //create user click handler
-    $(document).on("click", "button.join-submit-button", beginCreateUser);
+    $(document).on("click", "#user-join-submit", beginCreateUser);
 
     //function to handle form submit
     function beginCreateUser(event) {
@@ -23,7 +23,7 @@ $(document).ready(function() {
         $.post("/api/users", userData, function() {
 
             console.log("user posted to server");
-            window.location.href = "/user.html";
+            window.location.href = "/measurements.html";
             
         });
     }

@@ -1,40 +1,101 @@
-var aChart = $("#lineChart");
-var lineChart = new Chart(aChart, {
-    type: 'line',
-    data: {
-      labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-      datasets: [{ 
-          data: [86,114,106,106,107,111,133,221,783,2478],
-          label: "Africa",
-          borderColor: "#3e95cd",
-          fill: false
-        }, { 
-          data: [282,350,411,502,635,809,947,1402,3700,52670],
-          label: "Asia",
-          borderColor: "#8e5ea2",
-          fill: false
-        }, { 
-          data: [168,170,178,190,203,276,408,547,675,734],
-          label: "Europe",
-          borderColor: "#3cba9f",
-          fill: false
-        }, { 
-          data: [40,20,10,16,24,38,74,167,508,784],
-          label: "Latin America",
-          borderColor: "#e8c3b9",
-          fill: false
-        }, { 
-          data: [6,3,2,2,7,26,82,172,312,433],
-          label: "North America",
-          borderColor: "#c45850",
-          fill: false
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'World population per region (in millions)'
+$(document).ready(function () {
+
+  var selectedUser = $(".dropdown-menu").attr("data-id");
+
+  //grabs users from database, creates list of existing users
+  $.get("/api/users", function (data) {
+
+    if (data.length !== 0) {
+
+      for (var i = 0; i < data.length; i++) {
+
+        var row = $("<a>");
+        row.addClass("dropdown-item");
+        row.attr("href", "#");
+        row.attr("data-name", data[i].name);
+        row.attr("data-id", data[i].id);
+        row.text(data[i].name);
+
+        $(".dropdown-menu").append(row);
       }
     }
   });
+
+  //grabs value from user select menu
+  $(".dropdown-menu").on("click", "a", function (event) {
+
+    event.preventDefault();
+
+    var selectedUser = $(this).text();
+    var selectedUserID = $(this).attr("data-id");
+
+    //assigns button text to name of selected user
+    $(".dropdown-toggle").text(selectedUser);
+
+    //creates attritubes in html element to later be grabbed for ajax post
+    $(".dropdown-toggle").attr("data-name", selectedUser);
+    $(".dropdown-toggle").attr("data-id", selectedUserID);
+
+    console.log("User selected: " + selectedUser);
+  });
+
+  //grabs value of button clicked, hopefully generates a graph
+  $(".query-button").on("click", function () {
+
+    var buttonValue = $(this).attr("data-measurement");
+    var selectedUser = $(".dropdown-toggle").attr("data-id");
+
+    console.log("measurement selector clicked, button clicked: " + buttonValue);
+    console.log("selected user ID is: " + selectedUser);
+
+    $.get("/api/users/" + selectedUser)
+      .then(function (response) {
+
+        var theData = response.Measurements;
+        var labels = [];
+        var data = [];
+
+        for (i = 0; i < theData.length; i++) {
+
+          data.push(theData[i][buttonValue]);
+          labels.push(theData[i].createdAt.slice(5, 10));
+
+          console.log("The data requested: " + labels + ", " + data);
+
+        }
+
+        var aChart = $("#lineChart");
+        var lineChart = new Chart(aChart, {
+
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: data,
+              label: buttonValue,
+              borderColor: "#3e95cd",
+              fill: false
+            }],
+          },
+
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Progressional Fitness Tracker'
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                  suggestedMax: 30,
+                  suggestedMin: 10,
+                  //maxTicksLimit: 8,
+                }
+              }]
+            }
+          }
+        });
+      });
+  });
+});
